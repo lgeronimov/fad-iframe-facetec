@@ -15,54 +15,6 @@ const CREDENTIALS = {
   
 }
 
-// legends of module
-const LEGENDS = {
-  initializing: 'Iniciando',
-  processing: 'procesando',
-  facetec: {
-    accessibilityCancelButton: 'Cancelar',
-    feedbackCenterFace: 'Centra tu rostro',
-    feedbackFaceNotFound: 'Enfoca tu rostro',
-    feedbackMoveAwayWeb: 'Aléjate',
-    feedbackMoveWebCloser: 'Acércate',
-    feedbackMovePhoneAway: 'Aléjate',
-    feedbackMovePhoneCloser: 'Acércate',
-    feedbackHoldSteady: 'No te muevas',
-    feedbackMoveWebEvenCloser: 'Aún más cerca',
-    instructionsHeaderReadyDesktop: 'Biometría facial',
-    instructionsMessageReadyDesktop: 'Enfoca tu rostro en la guía y da clic en el botón para continuar',
-    instructionsHeaderReadyMobile1: 'Biometría facial',
-    instructionsHeaderReadyMobile2: '',
-    instructionsMessageReadyMobile1: 'Enfoca tu rostro en la guía y',
-    instructionsMessageReadyMobile2: 'da clic en el botón para continuar',
-    actionImReady: 'Continuar',
-    resultFacescanUploadMessage: 'procesando',
-    retryHeader: 'Inténtalo nuevamente',
-    retrySubheaderMessage: 'Necesitamos una imagen clara',
-    retryYourImageLabel: 'Tu foto',
-    retryIdealImageLabel: 'Pose ideal',
-    retryInstructionMessage1: 'Sin brillo o iluminación extrema',
-    retryInstructionMessage2: 'Expresión neutral, sin sonreír',
-    retryInstructionMessage3: 'Demasiado borroso, limpia tu cámara',
-    presessionFrameYourFace: 'Enfoca tu rostro en la guía',
-    presessionLookStraightAhead: 'Mira al frente',
-    presessionHoldSteady3: 'No te muevas por: 3',
-    presessionHoldSteady2: 'No te muevas por: 2',
-    presessionHoldSteady1: 'No te muevas por: 1',
-    presessionEyesStraightAhead: 'Mira al frente',
-    presessionRemoveDarkGlasses: 'Quítate los lentes de sol',
-    presessionNeutralExpression: 'Expresión neutral, sin sonreír',
-    presessionConditionsTooBright: 'Entorno com demasiada luz',
-    presessionBrightenYourEnvironment: 'Entorno con poca luz',
-    actionTryAgain: 'Aceptar',
-    cameraPermissionHeader: 'Permiso de cámara o micrófono desactivado',
-    cameraPermissionMessage: 'Por favor revisa la configuración de tu sistema operativo y los ajustes del navegador.',
-    cameraPermissionLaunchSettings: 'Aceptar',
-    initializingCamera: 'iniciando',
-    initializingCameraStillLoading: 'iniciando...',
-    resultSuccessMessage: 'Validación correcta'
-  }
-};
 
 
 const CUSTOMIZATION = {
@@ -79,6 +31,55 @@ const CUSTOMIZATION = {
         labelColor: '#ffffff',
         labelColorDisabled: '#8e8e8e',
         border: '1px solid #A70635'
+      }
+    }
+  },
+  moduleCustomization: {
+    legends: {
+      initializing: 'Iniciando',
+      processing: 'procesando',
+      facetec: {
+        accessibilityCancelButton: 'Cancelar',
+        feedbackCenterFace: 'Centra tu rostro',
+        feedbackFaceNotFound: 'Enfoca tu rostro',
+        feedbackMoveAwayWeb: 'Aléjate',
+        feedbackMoveWebCloser: 'Acércate',
+        feedbackMovePhoneAway: 'Aléjate',
+        feedbackMovePhoneCloser: 'Acércate',
+        feedbackHoldSteady: 'No te muevas',
+        feedbackMoveWebEvenCloser: 'Aún más cerca',
+        instructionsHeaderReadyDesktop: 'Biometría facial',
+        instructionsMessageReadyDesktop: 'Enfoca tu rostro en la guía y da clic en el botón para continuar',
+        instructionsHeaderReadyMobile1: 'Biometría facial',
+        instructionsHeaderReadyMobile2: '',
+        instructionsMessageReadyMobile1: 'Enfoca tu rostro en la guía y',
+        instructionsMessageReadyMobile2: 'da clic en el botón para continuar',
+        actionImReady: 'Continuar',
+        resultFacescanUploadMessage: 'procesando',
+        retryHeader: 'Inténtalo nuevamente',
+        retrySubheaderMessage: 'Necesitamos una imagen clara',
+        retryYourImageLabel: 'Tu foto',
+        retryIdealImageLabel: 'Pose ideal',
+        retryInstructionMessage1: 'Sin brillo o iluminación extrema',
+        retryInstructionMessage2: 'Expresión neutral, sin sonreír',
+        retryInstructionMessage3: 'Demasiado borroso, limpia tu cámara',
+        presessionFrameYourFace: 'Enfoca tu rostro en la guía',
+        presessionLookStraightAhead: 'Mira al frente',
+        presessionHoldSteady3: 'No te muevas por: 3',
+        presessionHoldSteady2: 'No te muevas por: 2',
+        presessionHoldSteady1: 'No te muevas por: 1',
+        presessionEyesStraightAhead: 'Mira al frente',
+        presessionRemoveDarkGlasses: 'Quítate los lentes de sol',
+        presessionNeutralExpression: 'Expresión neutral, sin sonreír',
+        presessionConditionsTooBright: 'Entorno com demasiada luz',
+        presessionBrightenYourEnvironment: 'Entorno con poca luz',
+        actionTryAgain: 'Aceptar',
+        cameraPermissionHeader: 'Permiso de cámara o micrófono desactivado',
+        cameraPermissionMessage: 'Por favor revisa la configuración de tu sistema operativo y los ajustes del navegador.',
+        cameraPermissionLaunchSettings: 'Aceptar',
+        initializingCamera: 'iniciando',
+        initializingCameraStillLoading: 'iniciando...',
+        resultSuccessMessage: 'Validación correcta'
       }
     }
   }
@@ -195,7 +196,6 @@ function initIframe() {
     // send configuration
     iframe.contentWindow.postMessage(
       new ResponseEvent(EVENT_MODULE.INIT_MODULE, {
-        legends: LEGENDS,
         credentials: CREDENTIALS,
         customization: CUSTOMIZATION
       }), iframe.src);
