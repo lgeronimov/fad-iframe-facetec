@@ -194,18 +194,18 @@ window.addEventListener("message", (message) => {
 });
 
 function initIframe() {
-  // get iframe
-  const iframe = document.getElementById("fad-iframe-facetec");
-  // url - https://localhost:4200/
-  const url = "https://localhost:4200/";
-  // set src to iframe
-  iframe.src = url;
-  // subscribe to onload
-  iframe.onload = () => {
-    // send configuration
-    iframe.contentWindow.postMessage( new ResponseEvent(EVENT_MODULE.INIT_MODULE, {
-        credentials: CREDENTIALS,
-        customization: CUSTOMIZATION,
-    }), iframe.src);
-  };
+    // get iframe
+    const iframe = document.getElementById("fad-iframe-facetec");
+    // url - https://localhost:4200/
+    const url = "https://localhost:4200/";
+    // set src to iframe
+    iframe.src = url;
+    // subscribe to onload
+    iframe.onload = () => {
+        // send configuration
+        iframe.contentWindow.postMessage(new ResponseEvent(EVENT_MODULE.INIT_MODULE, {
+            credentials: CREDENTIALS,
+            customization: CUSTOMIZATION,
+        }), iframe.src);
+    };
 }
