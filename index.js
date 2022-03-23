@@ -20,11 +20,21 @@ const CREDENTIALS = {
 
 // optional, the app has default legends and colors
 const CUSTOMIZATION = {
-  fadCustomization: {
-    colors: {
-      primary: "#A70635",
-      secondary: "#A70635",
-      tertiary: "#363636",
+    fadCustomization: {
+        colors: {
+            primary: "#A70635",
+            secondary: "#A70635",
+            tertiary: "#363636",
+        },
+        buttons: {
+            primary: {
+                backgroundColor: "#A70635",
+                backgroundColorDisabled: "#dcdcdc",
+                labelColor: "#ffffff",
+                labelColorDisabled: "#8e8e8e",
+                border: "1px solid #A70635",
+            },
+        },
     },
     buttons: {
       primary: {
@@ -141,61 +151,56 @@ class ResponseEvent {
 }
 
 class Result {
-  img; // face image ( base64 )
-  imgLowQuality; // low quality face image ( base64 )
-  faceScan; // face scan data
-  sessionId;
-  status;
+    img; // face image ( base64 )
+    imgLowQuality; // low quality face image ( base64 )
+    faceScan; // face scan data
+    sessionId;
+    status;
 }
 
 // subscribe to message event to recive the events from the iframe
 window.addEventListener("message", (message) => {
-  // IMPORTANT: check the origin of the data
-  // if (message.origin.includes("firmaautografa.com")) {
-  if (message.data.event === EVENT_MODULE.PROCESS_INIT) {
-    // PROCESS_INIT
-    // only informative
-    console.log("Process init");
-  } else if (message.data.event === EVENT_MODULE.PROCESS_ERROR) {
-    // PRROCESS_ERROR
-    console.log(message.data.data);
-    if (message.data.data.code === ERROR_CODE.CAMERA_NOT_RUNNING) {
-      // do something
-      alert("Cámara no soportada, intenta en otro dispositivo");
-    } else if (message.data.data.code === ERROR_CODE.INITIALIZATION_NOT_COMPLETED) {
-      // restart component
-    } else {
-      // restart component
-      alert(JSON.stringify(message.data.data));
+    // IMPORTANT: check the origin of the data
+    // if (message.origin.includes("firmaautografa.com")) {
+    if (message.data.event === EVENT_MODULE.PROCESS_INIT) {
+        // PROCESS_INIT
+        // only informative
+        console.log("Process init");
+    } else if (message.data.event === EVENT_MODULE.PROCESS_ERROR) {
+        // PRROCESS_ERROR
+        console.log(message.data.data);
+        if (message.data.data.code === ERROR_CODE.CAMERA_NOT_RUNNING) {
+            // do something
+            alert("Cámara no soportada, intenta en otro dispositivo");
+        } else if (message.data.data.code === ERROR_CODE.INITIALIZATION_NOT_COMPLETED) {
+            // restart component
+        } else {
+            // restart component
+            alert(JSON.stringify(message.data.data));
+        }
+    } else if (message.data.event === EVENT_MODULE.PROCESS_COMPLETED) {
+        // PROCESS_COMPLETED
+        console.log("Process completed");
+        const img = message.data.data.auditTrail[0];
+        const imgLowQuality = message.data.data.lowQualityAuditTrail[0];
+        const faceScan = message.data.data.faceScan;
+
+        // use the results as you see fit
+        // // show result example
+
+        const containerResult = document.getElementById("container-result");
+        const containerIframe = document.getElementById("container-iframe-facetec");
+        const imageId = document.getElementById("image-id");
+        const imageFace = document.getElementById("image-face");
+        const faceScanElement = document.getElementById("faceScan");
+
+        containerIframe.style.display = "none";
+        containerResult.style.display = "flex";
+        imageId.src = "data:image/png;base64, " + img;
+        imageFace.src = "data:image/png;base64, " + imgLowQuality;
+        faceScanElement.innerHTML = faceScan;
     }
-  } else if (message.data.event === EVENT_MODULE.PROCESS_COMPLETED) {
-    // PROCESS_COMPLETED
-    console.log("Process completed");
-    const img = message.data.data.auditTrail[0];
-    const imgLowQuality = message.data.data.lowQualityAuditTrail[0];
-    const faceScan = message.data.data.faceScan;
-    const sessionId = message.data.data.sessionId;
-    const status = message.data.data.status;
-    // use the results as you see fit
-    // // show result example
-
-    const containerResult = document.getElementById("container-result");
-    const containerIframe = document.getElementById("container-iframe-facetec");
-    const imageId = document.getElementById("image-id");
-    const imageFace = document.getElementById("image-face");
-    const faceScanElement = document.getElementById("faceScan");
-    const sessionIdElement = document.getElementById("sessionId");
-    const statusElement = document.getElementById("status");
-
-    containerIframe.style.display = "none";
-    containerResult.style.display = "flex";
-    imageId.src = "data:image/png;base64, " + img;
-    imageFace.src = "data:image/png;base64, " + imgLowQuality;
-    faceScanElement.innerHTML = faceScan;
-    sessionIdElement.innerHTML = sessionId;
-    statusElement.innerHTML = status;
-  }
-  // } else return;
+    // } else return;
 });
 
 function initIframe() {
