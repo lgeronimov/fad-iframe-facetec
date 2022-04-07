@@ -205,7 +205,7 @@ window.addEventListener("message", (message) => {
 function initIframe() {
   // get iframe
   const iframe = document.getElementById("fad-iframe-facetec");
-  // url - https://devapiframe.firmaautografa.com/
+  // url - https://devapiframe.firmaautografa.com/fad-iframe-facetec
   const username = "example@email.com";
   const password = "password";
   const url = `https://devapiframe.firmaautografa.com/fad-iframe-facetec?user=${username}&pwd=${password}`;
