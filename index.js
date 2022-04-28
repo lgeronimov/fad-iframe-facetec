@@ -127,6 +127,7 @@ const CONFIGURATION = {
         title: 'Prueba de vida',
         subtitle: 'Enfoca tu rostro en la guía',
         buttonNext: 'Continuar',
+        instructions: 'Recuerda no hacer uso de lentes de sol, gorras u otros elementos que dificulten la identificación de tu rostro.'
       }
     },
   },
