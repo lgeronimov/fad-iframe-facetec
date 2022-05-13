@@ -132,7 +132,7 @@ const CONFIGURATION = {
     },
   },
   pathDependencies: {
-    imageDirectory: 'ASSETS_URL'
+    // imageDirectory: 'ASSETS_URL'
   }
 };
 
