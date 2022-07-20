@@ -14,6 +14,7 @@ const EVENT_MODULE = {
 // facetec credentials, provided by Na-at Technologies
 const CREDENTIALS = {
   deviceKeyIdentifier: 'XXXXXXXXXXXXXXXXXX',
+  baseURL: '',
   publicFaceScanEncryptionKey: '-----BEGIN PUBLIC KEY-----\n' +
     'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' +
     'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' +
@@ -243,7 +244,7 @@ function initIframe() {
   // get iframe
   const iframe = document.getElementById("fad-iframe-facetec");
   // url - https://devapiframe.firmaautografa.com/fad-iframe-facetec
-  const tkn = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+  const tkn = "SE13dVExbXVobWF0Z0dWbzlJNHBuWXpOdGhmODdibldJcnRXcTJtbjl6UE9HdXRCZWJRQWlFZ1FIdjR0MzdSWENNUFZFMUxKSTA1OEZtNC9tclZYUGpCdFlqVmF1OVVwZ2hvbWtyT25KNmNvZkN6My9qdjAreURxdmZ6Nm91MU4";
   const url = `https://devapiframe.firmaautografa.com/fad-iframe-facetec?tkn=${tkn}`;
   // set src to iframe
   iframe.src = url;
