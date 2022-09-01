@@ -36,7 +36,7 @@ ejemplo.empresa.proyecto@na-at-com.mx\
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-Una vez creada la cuenta deden acceder a la siguiente url para generar su token:
+Una vez creada la cuenta deben acceder a la siguiente url para generar su token:
 
 https://devapiframe.firmaautografa.com/token-generator
 
