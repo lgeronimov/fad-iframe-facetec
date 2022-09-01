@@ -1,6 +1,6 @@
 
 # Requisitos
-Antes de ocupar el módulo, asegúrate de tener cumplir con los siguientes requisitos
+Antes de ocupar el módulo, asegúrate de tener los siguientes requisitos.
 
 ## 1) Licencia de Facetec
 
