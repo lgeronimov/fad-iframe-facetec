@@ -38,7 +38,8 @@ Una vez creada la cuenta deden acceder a la siguiente url para generar su token:
 
 https://devapiframe.firmaautografa.com/token-generator
 
-![alt text](https://raw.githubusercontent.com/lgeronimov/resoruces/master/images/token-generator.png)
+
+<img src="https://raw.githubusercontent.com/lgeronimov/resoruces/master/images/token-generator.png" width="500"/>
 
 
 Este es el token que se requiere para poder iniciarlizar el iframe:
