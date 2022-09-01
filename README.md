@@ -44,7 +44,7 @@ https://devapiframe.firmaautografa.com/token-generator
 <img src="https://raw.githubusercontent.com/lgeronimov/resoruces/master/images/token-generator.png" width="500"/>
 </div>
 
-Este es el token que se requiere para poder iniciarlizar el iframe:
+Este es el token que se requiere para poder inicializar el iframe:
 
 ``` ts
 .
