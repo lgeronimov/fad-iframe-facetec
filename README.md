@@ -24,7 +24,7 @@ Solicita al equipo de **tecnología** de Na-at Technologies una licencia de face
 
 Esta licencia es la que ocuparás el apartado de *CREDENTIALS* del ejemplo.
 
-> **NOTA:** La *baseURL* depende del ambiente que se desee ocupar (uat, pre-prod, prod) y de la licencia proporcionada.
+> **NOTA:** La *baseURL* depende del ambiente que se desee ocupar (uat, pre-prod, prod) y de la licencia proporcionada, **no todas las licencias estás dadas de altas en todos los ambientes**.
 
 ## 2) Credenciales de Producto
 
