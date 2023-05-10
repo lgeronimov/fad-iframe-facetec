@@ -129,6 +129,15 @@ const CONFIGURATION = {
         subtitle: 'Enfoca tu rostro en la guía',
         buttonNext: 'Continuar',
         instructions: 'Recuerda no hacer uso de lentes de sol, gorras u otros elementos que dificulten la identificación de tu rostro.'
+      },
+      style: {
+        common: {
+          loader: {
+            animationColor: '#FFFFFF',
+            backgroundColor: '#000000',
+            labelColor: '#FFFFFF',
+          }
+        }
       }
     },
   },
@@ -151,7 +160,7 @@ const ERROR_CODE = {
   USER_CANCELLED: 7,
   USER_CANCELLED_FROM_NEW_USER_GUIDANCE: 8,
   USER_CANCELLED_FROM_RETRY_GUIDANCE: 9,
-  USER_CANCELLED_WHEN_ATTEMPTING_TO_GET_CAMERA_PERMISSIONS_: 10,
+  USER_CANCELLED_WHEN_ATTEMPTING_TO_GET_CAMERA_PERMISSIONS: 10,
   LOCKED_OUT: 11,
   CAMERA_NOT_ENABLED: 12,
   NON_PRODUCTION_MODE_DEVICE_KEY_IDENTIFIER_INVALID: 13,
@@ -167,7 +176,7 @@ const ERROR_CODE = {
   STILL_LOADING_RESOURCES: 23,
   RESOURCES_COULD_NOT_BE_LOADED_ON_LAST_INIT: 24,
   RESOURCES_COULD_NOT_BE_LOADED: 25,
-  CREDENTIALS_REQUIRED: 26,
+  REQUIRED_CREDENTIALS: 26
 };
 
 // models
