@@ -40,14 +40,19 @@ const CONFIGURATION = {
     primary: '#A70635',
     secondary: '#A70635',
     tertiary: '#363636',
+    succesful: '#5A9A92',
    },
    buttons: {
     primary: {
      backgroundColor: '#A70635',
-     backgroundColorDisabled: '#dcdcdc',
      labelColor: '#ffffff',
+     borderColor: '#A70635',
+     borderStyle: 'solid',
+     borderWidth: '1px',
+    },
+    common: {
+     backgroundColorDisabled: '#dcdcdc',
      labelColorDisabled: '#8e8e8e',
-     border: '1px solid #A70635',
     },
    },
    fonts: {
