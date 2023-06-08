@@ -11,21 +11,18 @@ const EVENT_MODULE = {
  MODULE_READY: 'MODULE_READY',
 };
 
-// facetec credentials, provided by Na-at Technologies
-const CREDENTIALS = {
- deviceKeyIdentifier: 'XXXXXXXXXXXXXXXXXX',
- baseURL: '',
- publicFaceScanEncryptionKey:
-  '-----BEGIN PUBLIC KEY-----\n' +
-  'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' +
-  'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' +
-  'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' +
-  'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' +
-  '-----END PUBLIC KEY-----',
- productionKeyText: {
-  domains: 'XXXXXXXXXXXXXXXXXX',
-  expiryDate: 'XXXX-XX-XX',
-  key: 'XXXXXXXXXXXXXXXXXX',
+const MW_CONFIGURATION = {
+ useMiddleware: true,
+ app: 'XXXXXX',
+ additionalInfo: {
+  /**
+   * For validation process VALIDATION = 1,
+   * For enrollments process ENROLLMENT = 2,
+   * For signatures process SIGNATURE = 3,
+   * For videoconferences process VIDEOCONFERENCE = 4,
+   * For other kind of process OTHER = 5
+   */
+  processTypeId: 5,
  },
 };
 
@@ -274,8 +271,8 @@ function initModule() {
  const iframe = document.getElementById('fad-iframe-facetec');
  iframe.contentWindow.postMessage(
   new ResponseEvent(EVENT_MODULE.INIT_MODULE, {
-   credentials: CREDENTIALS,
    configuration: CONFIGURATION,
+   middleware: MW_CONFIGURATION,
   }),
   iframe.src
  );
