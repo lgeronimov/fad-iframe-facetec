@@ -19,8 +19,3 @@ body {
   word-break: break-all;
 }
 
-#faceScan {
-  display: inline-block;
-  height: 100px;
-  overflow: scroll;
-}

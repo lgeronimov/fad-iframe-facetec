@@ -149,10 +149,10 @@ const CONFIGURATION = {
  },
  pathDependencies: {
   imagesInstructions: {
-   instruction: 'Custom image URL',
+  //  instruction: 'Custom image URL',
   },
   images: {
-   retryScreenSlideshowImage: 'Custom image URL',
+  //  retryScreenSlideshowImage: 'Custom image URL',
   },
  },
 };
@@ -249,13 +249,11 @@ window.addEventListener('message', (message) => {
    const containerIframe = document.getElementById('container-iframe-facetec');
    const imageId = document.getElementById('image-id');
    const imageFace = document.getElementById('image-face');
-   const faceScanElement = document.getElementById('faceScan');
 
    containerIframe.style.display = 'none';
    containerResult.style.display = 'flex';
    imageId.src = 'data:image/png;base64, ' + img;
    imageFace.src = 'data:image/png;base64, ' + imgLowQuality;
-   faceScanElement.innerHTML = faceScan;
   }
  } else return;
 });
