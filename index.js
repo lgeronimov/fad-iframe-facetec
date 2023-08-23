@@ -81,8 +81,12 @@ const CONFIGURATION = {
 
   moduleCustomization: {
    legends: {
-    initializing: 'Iniciando',
-    processing: 'procesando',
+    common: {
+     loader: {
+      initializing: 'iniciando',
+      processing: 'procesando',
+     },
+    },
     facetec: {
      accessibilityCancelButton: 'Cancelar',
      feedbackCenterFace: 'Centra tu rostro',
